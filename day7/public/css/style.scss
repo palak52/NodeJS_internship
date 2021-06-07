@@ -1,0 +1,1127 @@
+$white: #ffffff;
+$black: #000000;
+$primary1: #02231a;
+$btnColor: #e6e804;
+
+@font-face {
+  font-family: BerlinSansFBDemi;
+  src: url(../fonts/Berlin_Sans/BerlinSansFBDemiBold.ttf);
+  font-weight: bold;
+}
+
+@mixin main-font {
+  font-family: "Poppins", sans-serif;
+}
+
+@mixin secondary-font {
+  font-family: "BerlinSansFBDemi", "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+@mixin hero_btn($col1, $col2, $pad1, $pad2, $bRadius) {
+  display: inline-block;
+  background-color: $col1;
+  color: $col2;
+  padding: $pad1 $pad2;
+  border-radius: $bRadius;
+  transition: all 0.3s;
+  border: none;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 1.5px 1.5px 5px 0 rgba($color: #000000, $alpha: 0.3);
+  }
+}
+
+@mixin upperBold {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+body {
+  @include main-font;
+  overflow-x: hidden;
+  background-color: $primary1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @include secondary-font();
+}
+
+.layout_margin {
+  margin-top: 90px;
+  margin-bottom: 90px;
+}
+
+.layout_padding {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.layout_padding2 {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.layout_padding2-top {
+  padding-top: 75px;
+}
+
+.layout_padding2-bottom {
+  padding-bottom: 75px;
+}
+
+.layout_padding-top {
+  padding-top: 120px;
+}
+
+.layout_padding-bottom {
+  padding-bottom: 120px;
+}
+
+.heading_container {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &.heading_center {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/*header section*/
+
+.hero_area {
+  position: relative;
+  display: flex;
+  height: 100vh;
+}
+
+.sub_page {
+  .hero_area {
+    height: auto;
+  }
+  .header_section {
+    padding: 0 25px;
+    width: 100%;
+  }
+  .navbar-brand {
+    margin-top: 0;
+  }
+  .slider_section .navbar-brand {
+    display: none;
+  }
+  .header_section .navbar-brand {
+    display: flex;
+  }
+
+  .slider_section .box::before {
+    width: calc(100% - 25px);
+  }
+
+  .custom_nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .user_option {
+    flex-direction: row;
+  }
+
+  .user_option .nav_search-btn {
+    margin: 0;
+    margin-right: 15px;
+  }
+
+  .custom_menu-btn button {
+    margin: 15px 0;
+  }
+  .menu_btn-style {
+    position: fixed;
+    left: 22px;
+    top: 4px;
+  }
+}
+
+.header_section {
+  background-color: $primary1;
+  padding: 0 30px;
+
+  .nav_container {
+    margin: 0 auto;
+  }
+
+  .navbar-brand {
+    display: none;
+  }
+}
+
+.navbar-brand {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-top: 25px;
+  @include secondary-font();
+
+  span {
+    color: $white;
+    font-size: 24px;
+  }
+}
+
+.custom_nav-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 99999;
+  padding: 0;
+  height: 100%;
+
+  .name_style {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    h6 {
+      color: $btnColor;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      text-transform: uppercase;
+      letter-spacing: -7px;
+      margin: 0;
+    }
+  }
+}
+
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
+  padding: 0px 25px;
+  color: #fefeff;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.custom_menu-btn {
+  button {
+    margin-top: 25px;
+    padding: 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+  }
+
+  span {
+    display: block;
+    width: 35px;
+    height: 4.5px;
+    background-color: $white;
+    margin: 7px 0;
+    transition: all 0.3s;
+  }
+}
+
+.menu_btn-style {
+  position: fixed;
+  left: 27.5px;
+  top: 12.5px;
+
+  button {
+    margin-top: 12px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+  }
+
+  span {
+    display: block;
+    width: 35px;
+    height: 4.5px;
+    background-color: $white;
+    margin: 7px 0;
+    transition: all 0.3s;
+  }
+
+  button {
+    transform: translateX(6px);
+
+    .s-1 {
+      transform: rotate(45deg) translateY(16px);
+    }
+
+    .s-2 {
+      transform: translateX(-100px);
+    }
+
+    .s-3 {
+      transform: rotate(-45deg) translateY(-16px);
+    }
+  }
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba($color: darken($primary1, 5), $alpha: 0.95);
+  overflow-x: hidden;
+  transition: 0.5s;
+
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 30px;
+  }
+
+  a {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $white;
+    margin: 10px 0;
+    display: block;
+    transition: 0.3s;
+    border: 1.5px solid $white;
+    border-radius: 5px;
+    width: 190px;
+
+    &:hover,
+    &.active {
+      border-color: transparent;
+      background-color: $white;
+      color: $black;
+    }
+  }
+}
+
+.menu_btn-style {
+  display: none;
+}
+
+.overlay-content {
+  position: relative;
+  top: 20%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu_width {
+  width: 100%;
+}
+
+.scroll-y-hidden {
+  overflow-y: hidden;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: initial;
+}
+
+.btn,
+.btn:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.user_option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .nav_search-btn {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: none;
+    background-position: center;
+    color: $white;
+    margin: 25px 0;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    color: $white;
+  }
+}
+
+/*end header section*/
+
+// slider section
+.slider_section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: $white;
+
+  #customCarousel1 {
+    width: 100%;
+  }
+
+  .box {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(../images/slider-bg.jpg);
+      background-size: cover;
+      clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 90%);
+      z-index: -1;
+    }
+
+    .detail-box {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 0 15px;
+      h1 {
+        text-transform: uppercase;
+      }
+
+      .btn-box {
+        display: flex;
+        margin-top: 35px;
+
+        a {
+          width: 165px;
+          text-transform: uppercase;
+          text-align: center;
+          margin: 0 5px;
+        }
+
+        .btn-1 {
+          @include hero_btn($btnColor, $black, 12px, 10px, 0);
+        }
+
+        .btn-2 {
+          @include hero_btn($white, $black, 12px, 10px, 0);
+        }
+      }
+    }
+  }
+
+  .carousel_btn-box {
+    width: 50px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      position: unset;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      color: $black;
+      background-color: $btnColor;
+      transition: all 0.2s;
+      opacity: 1;
+
+      &:hover {
+        background-color: $white;
+      }
+    }
+  }
+}
+
+// end slider section
+
+// we do section
+
+.wedo_section {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 100%;
+    background-color: $btnColor;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+    z-index: -1;
+  }
+
+  .heading_container {
+    h2 {
+      span {
+        color: $white;
+      }
+    }
+  }
+
+  .box {
+    margin-right: 45px;
+
+    .img-box {
+      clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .detail-box {
+      margin-top: 15px;
+
+      h5 {
+        font-weight: 600;
+        font-size: 20px;
+      }
+
+      p {
+      }
+
+      a {
+        @include hero_btn($primary1, $white, 10px, 25px, 0);
+        margin-top: 10px;
+        text-transform: uppercase;
+        font-size: 15px;
+      }
+    }
+  }
+
+  .owl-carousel {
+    margin-top: 45px;
+    position: unset;
+
+    .owl-nav {
+      width: 50px;
+      height: 110px;
+      position: absolute;
+      top: 50%;
+      right: 3.5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 20px;
+      transform: translateY(-50%);
+
+      button {
+        width: 50px;
+        height: 50px;
+        outline: none;
+        color: $black;
+        background-color: $white;
+        font-size: 22px;
+
+        &:hover {
+          color: $white;
+          background-color: $black;
+        }
+      }
+
+      button.owl-prev {
+        left: 0;
+      }
+
+      button.owl-next {
+        right: 0;
+      }
+    }
+  }
+}
+
+// end we do section
+
+// choose section
+
+.choose_section {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 95%;
+    height: 100%;
+    background-image: url(../images/choose-bg.jpg);
+    background-size: cover;
+    clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 90%);
+    z-index: -1;
+  }
+
+  .heading_container {
+    h2 {
+      color: $white;
+
+      span {
+        color: $btnColor;
+      }
+    }
+  }
+
+  .box {
+    margin-top: 45px;
+    text-align: center;
+
+    .box_content {
+      background-color: $primary1;
+      color: $white;
+      padding: 45px 15px;
+    }
+
+    .img-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        width: 75px;
+        height: auto;
+        fill: $white;
+      }
+    }
+
+    .detail-box {
+      margin-top: 15px;
+
+      h5 {
+        font-weight: 600;
+        font-size: 20px;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .btn-box {
+      margin-top: 10px;
+
+      a {
+        display: inline-block;
+        background-color: #02231a;
+        color: #ffffff;
+        padding: 10px 25px;
+        border-radius: 0;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        border: none;
+        text-transform: uppercase;
+        font-size: 15px;
+
+        &:hover {
+          background-color: $btnColor;
+          color: $black;
+        }
+      }
+    }
+
+    &:hover {
+      .box_content {
+        background-color: $btnColor;
+        color: $black;
+
+        .img-box {
+          svg {
+            fill: $black;
+          }
+        }
+      }
+    }
+  }
+}
+
+// end choose section
+
+// blog section
+
+.blog_section {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 100%;
+    background-color: $btnColor;
+    clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+    z-index: -1;
+  }
+
+  .heading_container {
+    h2 {
+      margin: 0;
+
+      span {
+        color: $white;
+      }
+    }
+
+    margin-bottom: 45px;
+  }
+
+  .row {
+    align-items: center;
+  }
+
+  .blog_content {
+    display: flex;
+
+    padding: 75px 25px;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 75%;
+      height: 100%;
+      background-color: #0d211b;
+      clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+      z-index: -1;
+    }
+
+    .blog_social {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-right: 45px;
+
+      a {
+        display: flex;
+        flex-direction: column;
+        color: $white;
+        @include secondary-font();
+
+        i {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .img-box {
+      flex: 1;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .blog_detail {
+    margin-top: 15px;
+
+    h5 {
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    p {
+    }
+
+    a {
+      @include hero_btn($primary1, $white, 10px, 25px, 0);
+      margin-top: 10px;
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+  }
+
+  .carousel_btn-box {
+    width: 50px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: -75px;
+    transform: translateY(-50%);
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      position: unset;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      color: $white;
+      background-color: $black;
+      transition: all 0.2s;
+      opacity: 1;
+
+      &:hover {
+        background-color: $white;
+        color: $black;
+      }
+    }
+  }
+}
+
+// end blog section
+
+// contact section
+.contact_section {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 95%;
+    height: 100%;
+    background-image: url(../images/choose-bg.jpg);
+    background-size: cover;
+    clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 90%);
+    z-index: -1;
+  }
+
+  .heading_container {
+    h2 {
+      color: $white;
+      margin: 0;
+
+      span {
+        color: $btnColor;
+      }
+    }
+
+    margin-bottom: 45px;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    height: 50px;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    background-color: $white;
+    outline: none;
+    color: $black;
+
+    &::placeholder {
+      color: #4c4c4c;
+    }
+
+    &.message-box {
+      height: 120px;
+    }
+  }
+
+  button {
+    border: none;
+    @include hero_btn($btnColor, $black, 12px, 35px, 0);
+    font-size: 15px;
+    margin-top: 15px;
+    font-weight: 600;
+  }
+
+  .map_container {
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+
+    .map {
+      height: 100%;
+      flex: 1;
+
+      #googleMap {
+        height: 100%;
+      }
+    }
+  }
+}
+
+// end contact section
+
+// client section
+
+.client_section {
+  background-image: url(../images/client-bg.jpg);
+  background-size: cover;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 100%;
+    background-color: $btnColor;
+    clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+    z-index: -1;
+  }
+
+  .heading_container {
+    color: $black;
+
+    h2 {
+      text-transform: none;
+    }
+  }
+
+  .box {
+    margin: 5px;
+
+    .img-box {
+      width: 100px;
+      min-width: 100px;
+      margin-bottom: -65px;
+      margin-left: 25px;
+      position: relative;
+      z-index: 2;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .detail-box {
+      padding: 85px 25px 45px 25px;
+      background-color: $white;
+      clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+
+      h5 {
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      h6 {
+        color: $btnColor;
+        font-weight: normal;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .owl-carousel {
+    margin-top: 45px;
+    padding: 0;
+
+    .owl-nav {
+      width: 50px;
+      height: 110px;
+      position: absolute;
+      top: 50%;
+      left: -75px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 20px;
+      transform: translateY(-50%);
+
+      button {
+        width: 50px;
+        height: 50px;
+        background-color: $black;
+        outline: none;
+        color: $white;
+        font-size: 22px;
+
+        &:hover {
+          background-color: $white;
+          color: $black;
+        }
+      }
+
+      button.owl-prev {
+        left: 0;
+      }
+
+      button.owl-next {
+        right: 0;
+      }
+    }
+  }
+}
+
+// end client section
+
+/* info section */
+.info_section {
+  color: $white;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 95%;
+    height: 100%;
+    background-image: url(../images/info-bg.jpg);
+    background-size: cover;
+    clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 90%);
+    z-index: -1;
+    opacity: 0.2;
+  }
+
+  .info_logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+
+    a {
+      color: $white;
+      @include secondary-font();
+      font-size: 3rem;
+    }
+  }
+
+  h4 {
+    margin-bottom: 20px;
+    @include main-font();
+  }
+
+  .info_contact {
+    .contact_link_box {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        margin: 5px 0;
+        color: $white;
+
+        i {
+          margin-right: 5px;
+        }
+
+        &:hover {
+          color: $btnColor;
+        }
+      }
+    }
+  }
+
+  .info_social {
+    display: flex;
+    margin-top: 20px;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      border-radius: 100%;
+      margin-right: 10px;
+      font-size: 24px;
+
+      &:hover {
+        color: $btnColor;
+      }
+    }
+  }
+
+  .info_links {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    a {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+      color: $white;
+
+      &:hover,
+      &.active {
+        color: $btnColor;
+      }
+    }
+  }
+
+  form {
+    background-color: $btnColor;
+    padding: 10px;
+
+    input {
+      border: none;
+      border-bottom: 1px solid $black;
+      background-color: transparent;
+      width: 100%;
+      height: 45px;
+      color: $black;
+      outline: none;
+      text-align: center;
+
+      &::placeholder {
+        color: $black;
+      }
+    }
+
+    button {
+      width: 100%;
+      text-align: center;
+      @include hero_btn($btnColor, $black, 10px, 55px, 0);
+      margin-top: 15px;
+      text-transform: uppercase;
+      outline: none;
+    }
+  }
+}
+
+/* end info section */
+
+/* footer section*/
+
+.footer_section {
+  background-color: $primary1;
+  text-align: center;
+  color: $white;
+
+  p {
+    margin: 0;
+    padding-bottom: 25px;
+    color: $white;
+
+    a {
+      color: inherit;
+    }
+  }
+}
+
+// end footer section
