@@ -6,5 +6,5 @@ Node JS internship for 15 days . \
 ✍️ &nbsp;day 4: build chat application using socket.io \
 ✍️ &nbsp;day 5: learn express js \
 ✍️ &nbsp;day 6: make admin panel and user panel and theme integration \
-✍️ &nbsp; day 7: learn routing \ 
-✍️ &nbsp; day 8: perform CRUD operation , database connection , using mySql ..\
+✍️ &nbsp; day 7: learn routing . \
+✍️ &nbsp; day 8: perform CRUD operation , database connection , using mySql .\
