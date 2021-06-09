@@ -1,0 +1,21 @@
+<% if(db_rows_array.length > 0){ %>
+    <table border="2px solid black">
+        <tr>
+            <th>Id</th>
+            <th>Email-Id</th>
+            <th>Password</th>
+            <th>Action</th>
+        </tr>
+        <% for(var i=0;i<db_rows_array.length;i++) { %>
+            <tr>
+            <td><%= db_rows_array[i].Id %></td>
+            <td><%= db_rows_array[i].Email_id %></td>
+            <td><%= db_rows_array[i].Password %></td>
+            <td><a href="/edit/<%= db_rows_array[i].Id %>">Edit</a> | <a href="/delete/<%= db_rows_array[i].Id %>">Delete</a></td>
+            </tr>
+            <%}%>
+    </table>
+    <a href="/add">Add Records</a>
+        <% } else {%>
+            No Records Found
+        <%} %>
