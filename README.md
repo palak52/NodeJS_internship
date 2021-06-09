@@ -1,4 +1,4 @@
-# NodeJS_internship_15days
+# NodeJS_internship
 Node JS internship  . \
 ✍️ &nbsp;day 1: introduction to Node js  \
 ✍️ &nbsp;day 2: perform  basic task on Node js. working on modules \
