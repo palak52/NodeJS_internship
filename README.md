@@ -8,4 +8,5 @@ Node JS internship for 15 days . \
 ✍️ &nbsp;day 6: make admin panel and user panel and theme integration \
 ✍️ &nbsp; day 7: learn routing . \
 ✍️ &nbsp; day 8: perform CRUD operation , database connection , using mySql . \
-✍️ &nbsp; day 9: complete CRUD operations .
+✍️ &nbsp; day 9: complete CRUD operations .\
+✍️ &nbsp; day 10: task to build web
