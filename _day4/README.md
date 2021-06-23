@@ -6,7 +6,6 @@ Chat application (single/group) using node.js and socket.io
 ## How to use
 
 ```
-$ git clone https://github.com/pushpanathank/node-js-socket-io-chat-app.git
 $ cd node-js-socket-io-chat-app
 $ npm install
 $ npm start
